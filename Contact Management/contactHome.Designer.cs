@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(contactHome));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AppName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.lblContactName = new System.Windows.Forms.Label();
             this.txtContactNo = new System.Windows.Forms.TextBox();
             this.lblContactNo = new System.Windows.Forms.Label();
-            this.AppName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -77,6 +77,18 @@
             this.panel1.Size = new System.Drawing.Size(261, 605);
             this.panel1.TabIndex = 0;
             // 
+            // AppName
+            // 
+            this.AppName.AutoSize = true;
+            this.AppName.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AppName.ForeColor = System.Drawing.Color.White;
+            this.AppName.Location = new System.Drawing.Point(3, 253);
+            this.AppName.Name = "AppName";
+            this.AppName.Size = new System.Drawing.Size(238, 112);
+            this.AppName.TabIndex = 29;
+            this.AppName.Text = "Contact \r\nManager";
+            this.AppName.Click += new System.EventHandler(this.Label1_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -94,6 +106,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(218, 31);
             this.txtSearch.TabIndex = 27;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
             // 
@@ -142,6 +155,7 @@
             this.closeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeWindow.TabIndex = 26;
             this.closeWindow.TabStop = false;
+            this.closeWindow.Click += new System.EventHandler(this.closeWindow_Click);
             // 
             // dataGridView1
             // 
@@ -152,6 +166,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(626, 231);
             this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // btnReset
             // 
@@ -164,6 +179,7 @@
             this.btnReset.TabIndex = 24;
             this.btnReset.Text = "RESET";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDelete
             // 
@@ -176,6 +192,7 @@
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -188,6 +205,7 @@
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -200,12 +218,14 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtContactID
             // 
             this.txtContactID.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactID.Location = new System.Drawing.Point(163, 15);
             this.txtContactID.Name = "txtContactID";
+            this.txtContactID.ReadOnly = true;
             this.txtContactID.Size = new System.Drawing.Size(235, 31);
             this.txtContactID.TabIndex = 20;
             // 
@@ -302,18 +322,6 @@
             this.lblContactNo.TabIndex = 11;
             this.lblContactNo.Text = "Contact No";
             // 
-            // AppName
-            // 
-            this.AppName.AutoSize = true;
-            this.AppName.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppName.ForeColor = System.Drawing.Color.White;
-            this.AppName.Location = new System.Drawing.Point(3, 253);
-            this.AppName.Name = "AppName";
-            this.AppName.Size = new System.Drawing.Size(238, 112);
-            this.AppName.TabIndex = 29;
-            this.AppName.Text = "Contact \r\nManager";
-            this.AppName.Click += new System.EventHandler(this.label1_Click);
-            // 
             // contactHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -327,6 +335,7 @@
             this.Padding = new System.Windows.Forms.Padding(6);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.contactHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
